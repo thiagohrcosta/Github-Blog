@@ -18,14 +18,14 @@ export const HeaderProfileStyle = styled.div`
 
     .profile-avatar {
       img {
-        width: 120px;
-        height: 120px;
+        width: 148px;
+        height: 148px;
         border-radius: 20px;
       }
     }
 
     .profile-info {
-      margin: 0 20px;
+      margin: 0 32px;
       
       display: flex;
       flex-direction: column;
@@ -44,6 +44,7 @@ export const HeaderProfileStyle = styled.div`
           display: flex;
           justify-content: center;
           align-items: center;
+          color: ${props => props.theme["blue-500"]};
           
           img {
             margin-left: 10px;
@@ -54,7 +55,7 @@ export const HeaderProfileStyle = styled.div`
       }
 
       .profile-social {
-        margin-top: 20px;
+        margin-top: 25px;
         display: flex;
         justify-content: space-between;
         align-items: center;
