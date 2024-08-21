@@ -1,12 +1,16 @@
 import { Publication } from "../Publication";
 import { PublicationsComponentStyle } from "./style";
 
-export function Publications() {
+interface PublicationsProps {
+  publications_number: number
+}
+
+export function Publications({ publications_number }: PublicationsProps) {
   return (
     <PublicationsComponentStyle>
       <div className="publication-header">
         <h2>Publications</h2>
-        <p>6 publications</p>
+        <p>{publications_number} publications</p>
       </div>
       <div className="search-publication-container">
         <input type="text" placeholder="Search content" />
