@@ -8,4 +8,8 @@ export const PublicationComponentStyle = styled.div`
   h2 {
     font-size: 20px;
   }
+
+  .publication-content {
+    color: ${props => props.theme["gray-300"]}
+  }
 `;

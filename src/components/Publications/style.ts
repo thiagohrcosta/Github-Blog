@@ -38,7 +38,7 @@ export const PublicationsComponentStyle = styled.div`
   .publications-content-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 16px;
+    grid-gap: 34px;
     margin: 10px;
   }
 `;

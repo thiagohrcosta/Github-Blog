@@ -9,6 +9,9 @@ export const HeaderProfileStyle = styled.div`
   z-index: 1;
   border-radius: 10px;
 
+  margin-top: -60px;
+  position: relative;
+
   .profile-container {
     display: flex;
     justify-content: space-between;

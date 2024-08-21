@@ -13,7 +13,9 @@ export function Publication({ title, content, date }: PublicationProps) {
         <h2>{title}</h2>
         <p>{date}</p>
       </div>
-      <p>{content}</p>
+      <div className="publication-content">
+        <p>{content}</p>
+      </div>
 
     </PublicationComponentStyle>
   )
