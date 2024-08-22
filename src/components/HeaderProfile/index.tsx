@@ -1,6 +1,5 @@
 import { HeaderProfileStyle } from "./style";
 
-import PhotoProfile from "../../assets/photo.png";
 import ExitIcon from "../../assets/exit.png";
 import GithubIcon from "../../assets/githubIcon.png";
 import CompanyIcon from "../../assets/companyIcon.png";
@@ -10,17 +9,18 @@ interface UserProfileProps {
   name: string;
   bio: string;
   followers: number;
+  avatar_url: string;
 }
 
 
-export function HeaderProfile({ name, bio, followers}: UserProfileProps) {
+export function HeaderProfile({ name, bio, followers, avatar_url}: UserProfileProps) {
 
   return (
     <HeaderProfileStyle>
       {name && (
         <div className="profile-container">
           <div className="profile-avatar">
-            <img src={PhotoProfile} alt="Photo" />
+            <img src={avatar_url} alt="Photo" />
           </div>
           <div className="profile-info">
             <div className="profile-header">

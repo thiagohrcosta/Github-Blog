@@ -9,7 +9,7 @@ export function Home() {
 
   async function fetchUserData() {
     const response = await api.get("/users/thiagohrcosta")
-    console.log(response)
+    console.log(response.data.avatar_url)
     setUser(response.data)
   }
 
@@ -26,6 +26,7 @@ export function Home() {
             name={user.name}
             bio={user.bio}
             followers={user.followers}
+            avatar_url={user.avatar_url}
           />
           <Publications
             publications_number={user.public_repos}

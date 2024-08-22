@@ -7,13 +7,14 @@ import { api } from "../../services/api";
 export function Publications() {
   const [searchParams, setSearchParams] = useState(null);
   const [publicationsCounter, setPublicationsCounter] = useState(null)
+  const [publications, setPublications] = useState(null)
 
   async function handleFectchIssues() {
-    if (searchParams) {
-      const response = await api.get(`https://api.github.com/search/issues?q=${searchParams}:thiagohrcosta/Github-Blog`)
-      // setPublicationsCounter(response.data.total_count)
-      console.log("aqui", response.data)
-    }
+    const response = await api.get(`https://api.github.com/search/issues?q=repo:thiagohrcosta/Github-Blog`)
+    setPublicationsCounter(response.data.total_count)
+    setPublications(response.data.items)
+    // setPublicationsCounter()
+    console.log("aqui", response.data.items)
   }
 
   useEffect(() => {
@@ -30,26 +31,15 @@ export function Publications() {
         <input type="text" placeholder="Search content" onChange={(e) => setSearchParams(e.target.value)} />
       </div>
       <div className="publications-content-container">
-        <Publication
-          title="JavaScript data types and data structures"
-          content="Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn."
-          date="19/08/2024"
-        />
-        <Publication
-          title="JavaScript data types and data structures"
-          content="Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn."
-          date="19/08/2024"
-        />
-        <Publication
-          title="JavaScript data types and data structures"
-          content="Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn."
-          date="19/08/2024"
-        />
-        <Publication
-          title="JavaScript data types and data structures"
-          content="Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn."
-          date="19/08/2024"
-        />
+        {publications && publications.map((publication) => {
+          return (
+            <Publication
+              title={publication.title}
+              content={publication.body || "No description provided by Issue"}
+              date={publication.created_at}
+            />
+          )}
+        )}
       </div>
     </PublicationsComponentStyle>
   )
