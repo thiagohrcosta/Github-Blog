@@ -1,3 +1,5 @@
+import { format } from 'date-fns'
+
 import { useEffect, useState } from "react";
 import { Publication } from "../Publication";
 import { PublicationsComponentStyle } from "./style";
@@ -21,6 +23,7 @@ export function Publications() {
     handleFectchIssues()
   }, [searchParams, publicationsCounter])
 
+
   return (
     <PublicationsComponentStyle>
       <div className="publication-header">
@@ -36,7 +39,7 @@ export function Publications() {
             <Publication
               title={publication.title}
               content={publication.body || "No description provided by Issue"}
-              date={publication.created_at}
+              date={format(publication.created_at, 'MM/dd/yy')}
             />
           )}
         )}

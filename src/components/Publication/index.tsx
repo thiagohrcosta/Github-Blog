@@ -1,3 +1,4 @@
+import { TruncateString } from "../../utils/truncateString";
 import { PublicationComponentStyle } from "./style";
 
 interface PublicationProps {
@@ -14,7 +15,7 @@ export function Publication({ title, content, date }: PublicationProps) {
         <p>{date}</p>
       </div>
       <div className="publication-content">
-        <p>{content}</p>
+        <p><TruncateString content={content} /></p>
       </div>
 
     </PublicationComponentStyle>
