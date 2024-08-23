@@ -7,6 +7,8 @@ export const PublicationComponentStyle = styled.div`
 
   h2 {
     font-size: 20px;
+    margin-right: 10px;
+    padding-bottom: 40px;
   }
 
   .publication-content {
