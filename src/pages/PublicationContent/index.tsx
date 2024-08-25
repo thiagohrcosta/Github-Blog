@@ -11,7 +11,7 @@ export function PublicationContent() {
   const [comments, setComments] = useState(null);
   
   async function fetchComents() {
-    const response = await api.get(`https://api.github.com/repos/thiagohrcosta/Github-Blog/issues/${id}/comments`)
+    const response = await api.get(`/repos/thiagohrcosta/Github-Blog/issues/${id}/comments`)
     setComments(response.data)
     console.log("AQUI", response.data)
   }
