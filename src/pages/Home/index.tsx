@@ -9,7 +9,6 @@ export function Home() {
 
   async function fetchUserData() {
     const response = await api.get("/users/thiagohrcosta")
-    console.log(response.data.avatar_url)
     setUser(response.data)
   }
 
