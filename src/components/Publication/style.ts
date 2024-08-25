@@ -5,6 +5,10 @@ export const PublicationComponentStyle = styled.div`
   padding: 40px 25px;
   border-radius: 10px;
 
+  a {
+    text-decoration: none;
+  }
+
   h2 {
     font-size: 20px;
     margin-right: 10px;
